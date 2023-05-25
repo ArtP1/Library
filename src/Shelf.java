@@ -66,7 +66,7 @@ public class Shelf {
 
     public String listBooks() {
         StringBuilder sb = new StringBuilder();
-        sb.append(books.size()).append(" books on shelf: ").append(shelfNumber).append(" : ").append(subject).append("\n");
+        sb.append(books.size()).append(" books on shelf: ").append(shelfNumber).append(" : ").append(subject);
 
         for(Book book : books.keySet()) {
             int count = getBookCount(book);

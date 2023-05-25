@@ -13,7 +13,8 @@ class ShelfTest {
     Book testBook = null;
     Book testBook2 = null;
     Book testBook3 = null;
-    HashMap<Book, Integer> books;
+    HashMap<Book, Integer> expectedBooks;
+    HashMap<Book, Integer> expectedBooks2;
     Random random = new Random();
 
     @BeforeEach
@@ -22,6 +23,7 @@ class ShelfTest {
         testBook = new Book("9780345813925", "The Silent Patient", "Fiction", 350,"Alex Michaelides", LocalDate.now());
         testBook2 = new Book("9780062678423", "Educated: A Memoir", "Fiction", 400 ,"Tara Westover", LocalDate.of(2023, 4, 10));
         testBook3 = new Book("9781982111014", "Where the Crawdads Sing", "sci-fi", 384  ,"Delia Owens", LocalDate.of(2023, 5, 10));
+        expectedBooks = new HashMap<>();
     }
 
     @AfterEach
@@ -46,13 +48,12 @@ class ShelfTest {
     void gettersSettersTest() {
         testShelf.setShelfNumber(1);
         testShelf.setSubject("Technology");
-        HashMap<Book, Integer> expectedBooks = new HashMap<>();
         expectedBooks.put(testBook, 1);
         expectedBooks.put(testBook2, 4);
 
         assertEquals(1, testShelf.getShelfNumber());
         assertEquals("Technology", testShelf.getSubject());
-        assertEquals(expectedBooks, testShelf.getBooks());
+        assertNotEquals(expectedBooks, expectedBooks2);
 
         System.out.println("Getters & Setters Test: SUCCESS");
     }

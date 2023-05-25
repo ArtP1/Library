@@ -85,10 +85,11 @@ public class Book {
 
         Book book = (Book) o;
 
-        if (pageCount != book.pageCount || !isbn.equals(book.isbn) || !title.equals(book.title) || !subject.equals(book.subject) || !author.equals(book.author)) {
-            return false;
-        }
-        return true;
+        if (pageCount != book.pageCount) return false;
+        if (!isbn.equals(book.isbn)) return false;
+        if (!title.equals(book.title)) return false;
+        if (!subject.equals(book.subject)) return false;
+        return author.equals(book.author);
     }
 
     @Override

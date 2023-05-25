@@ -22,7 +22,7 @@ public class Reader {
 
     @Override
     public String toString() {
-        return name + "(#" + cardNumber + ") has checked out " + books;
+        return name + " (#" + cardNumber + ") has checked out ";
     }
 
     public Code addBook(Book new_bk) {
